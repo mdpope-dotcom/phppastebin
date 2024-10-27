@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastes - Pastebin POC</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white flex flex-col items-center justify-center h-screen">
+    <h1 class="text-3xl mb-4">Your Pastes</h1>
+    <div id="pastes" class="w-full max-w-2xl">
+        <!-- Placeholder for pastes -->
+        <div class="bg-gray-800 p-4 mb-2 rounded">Paste 1: This is a sample paste content.</div>
+        <div class="bg-gray-800 p-4 mb-2 rounded">Paste 2: This is another sample paste content.</div>
+    </div>
+    <button onclick="goBack()" class="mt-4 bg-gray-700 p-2 rounded hover:bg-gray-600">Back to Main</button>
+
+    <script>
+        function goBack() {
+            window.location.href = 'main.html'; // Redirects back to main page
+        }
+    </script>
+</body>
+</html>
