@@ -10,8 +10,6 @@
     <h1 class="text-3xl mb-4">Your Pastes</h1>
     <div id="pastes" class="w-full max-w-2xl">
         <!-- Placeholder for pastes -->
-        <div class="bg-gray-800 p-4 mb-2 rounded">Paste 1: This is a sample paste content.</div>
-        <div class="bg-gray-800 p-4 mb-2 rounded">Paste 2: This is another sample paste content.</div>
     </div>
     <button onclick="goBack()" class="mt-4 bg-gray-700 p-2 rounded hover:bg-gray-600">Back to Main</button>
 
@@ -19,6 +17,24 @@
         function goBack() {
             window.location.href = 'main.html'; // Redirects back to main page
         }
+
+        function loadPastes() {
+            const pastesContainer = document.getElementById('pastes');
+            const pastes = JSON.parse(localStorage.getItem('pastes')) || [];
+            if (pastes.length === 0) {
+                pastesContainer.innerHTML = '<p class="text-center">No pastes available.</p>';
+            } else {
+                pastes.forEach(paste => {
+                    const pasteElement = document.createElement('div');
+                    pasteElement.className = 'bg-gray-800 p-4 mb-2 rounded';
+                    pasteElement.textContent = paste;
+                    pastesContainer.appendChild(pasteElement);
+                });
+            }
+        }
+
+        // Load pastes when the page is loaded
+        window.onload = loadPastes;
     </script>
 </body>
 </html>
