@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Pastebin POC</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center h-screen">
+    <div class="w-full max-w-xs">
+        <h2 class="text-center text-2xl mb-6">Login</h2>
+        <input type="text" id="username" placeholder="Username" class="block w-full p-2 mb-4 border border-gray-600 rounded">
+        <input type="password" id="password" placeholder="Password" class="block w-full p-2 mb-4 border border-gray-600 rounded">
+        <button onclick="login()" class="w-full bg-blue-500 p-2 rounded hover:bg-blue-600">Login</button>
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'tailz' && password === 'doxxed_online') {
+                // Redirect to the main content page
+                window.location.href = 'index.html';
+            } else {
+                alert('Invalid credentials');
+            }
+        }
+    </script>
+</body>
+</html>
